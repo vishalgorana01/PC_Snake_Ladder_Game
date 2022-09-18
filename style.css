@@ -1,0 +1,532 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: url("./images/snake\ ladder\ background\ 3.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#display {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+#myCanvas {
+    border: 4px solid blanchedalmond;
+    max-width: 700px;
+    max-height: 700px;
+}
+
+.canvas_equivalent {
+    position: absolute;
+    height: 700px;
+    width: 700px;
+    top: 0px;
+    border: 2px solid yellow;
+}
+
+img {
+    position: relative;
+    height: 30p0x;
+    width: 40px;
+    left: 0px;
+}
+
+.img-1 {
+    height: 170px;
+    width: 65px;
+    left: -595px;
+    top: 368px;
+    transform: tanslateY(45deg);
+    transform: rotateZ(22deg);
+}
+
+.img-2 {
+    left: -335px;
+    height: 300px;
+    top: 0px;
+    width: 40px;
+    transform: rotateZ(-30deg);
+}
+
+.img-3 {
+    left: -296px;
+    height: 438px;
+    top: 28px;
+    width: 102px;
+    transform: rotateZ(28deg);
+}
+
+.img-4 {
+    top: -46px;
+    left: -754px;
+    height: 731px;
+    width: 241px;
+    transform: rotateZ(-14deg);
+}
+
+.img-5 {
+    top: 428px;
+    left: -687px;
+    height: 261px;
+    width: 249px;
+    transform: rotateZ(-14deg) rotateY(122deg);
+}
+
+.img-6 {
+    left: -1080px;
+    top: 500px;
+    height: 193px;
+    transform: rotateZ(25deg);
+
+}
+
+.status_of_player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    /* border: 2px solid black; */
+    height: 100vh;
+    right: 401px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.table{
+    background: url("./images/1035.jpg") no-repeat center !important;
+    background-size: cover !important;
+    color: white !important;
+}
+
+.serial_no{
+    color: black !important;
+}
+
+.controller_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    /* border: 2px solid black; */
+    height: 100vh;
+    width: 400px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.roll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    flex-direction: column;
+    background-color: bisque;
+    border: 2px solid burlywood;
+}
+
+.dice {
+    display: flex;
+    height: 120px;
+    /* width: 200px; */
+    /* border: 2px solid black; */
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    /* animation: roll 0.2s linear 2 backwards; */
+    /* transform: translateZ(-100px); */
+    transform-origin: center center;
+}
+
+.dice div {
+    position: absolute;
+    height: 75px;
+    width: 75px;
+    border: 2px solid red;
+}
+
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: olive;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    font-size: 24px;
+}
+
+.second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: olive;
+    font-size: 24px;
+}
+
+.third {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: olive;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+    font-size: 24px;
+}
+
+.four {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: olive;
+    transform: translateZ(-100px);
+    font-size: 24px;
+}
+
+.five {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: olive;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    font-size: 24px;
+}
+
+.six {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: olive;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    font-size: 24px;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes roll {
+    25% {
+        transform: rotateX(-25deg) rotateY(25deg) rotateZ(90deg);
+    }
+
+    50% {
+        transform: rotateX(-90deg) rotateY(25deg) rotateZ(180deg);
+    }
+
+    75% {
+        transform: rotateX(-270deg) rotateY(25deg) rotateZ(270deg);
+
+    }
+
+    100% {
+        transform: rotateX(-360deg) rotateY(25deg) rotateZ(360deg);
+    }
+
+}
+
+.btn {
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background: url("./images/1035.jpg") no-repeat center;
+    background-size: 235px 72px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.no_of_players {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex-wrap: wrap;
+    height: 250px;
+    width: 250px;
+    /* border: 2px solid black; */
+    margin: 50px;
+}
+
+.no_of_players div {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no_of_players div img {
+    position: relative;
+    height: 80px;
+    width: 45px;
+}
+
+.congratulations_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 300px;
+    width: 550px;
+    /* border: 2px solid black; */
+    background-color: aliceblue;
+    top: 0px;
+    margin: calc(50vh - 150px) calc(50vw - 275px) ;
+    border-radius: 2px;
+    opacity: 0;
+    z-index: 1;
+    /* animation: ; */
+}
+
+.congratulations_card i{
+    font-size: 120px;
+    color: yellow;
+    margin-bottom: 20px;
+}
+
+.congratulations_card div{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.congratulations_card div button{
+    margin: 10px 30px;
+}
+
+
+
+.congratulations_star{
+    position: fixed;
+    top: 0px;
+    display: none;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    padding: 40px;
+}
+
+.congratulations_star i{
+    color: yellow;
+    font-size: 40px;
+    position: relative;
+}
+
+.congratulations_star i:nth-child(1){
+    top: 0px;
+    animation: rain_fall 3s infinite backwards linear;
+    
+}
+
+.congratulations_star i:nth-child(2){
+    top: 20px;
+    animation: rain_fall 3s infinite 0.4s backwards linear;
+
+    /* left: 100px; */
+}
+
+.congratulations_star i:nth-child(3){
+    top: 40px;
+    animation: rain_fall 3s infinite 0.1s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(4){
+    top: 0px;
+    animation: rain_fall 3s infinite 0.6s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(5){
+    top: 20px;
+    animation: rain_fall 3s infinite 0.2s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(6){
+    top: 40px;
+    animation: rain_fall 3s infinite 0.5s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(7){
+    top: 0px;
+    animation: rain_fall 3s infinite 0.9s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(8){
+    top: 20px;
+    animation: rain_fall 3s infinite 0.5s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(9){
+    top: 40px;
+    animation: rain_fall 3s infinite 0.7s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(10){
+    top: 0px;
+    animation: rain_fall 3s infinite 0.3s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(11){
+    top: 20px;
+    animation: rain_fall 3s infinite 0.7s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(12){
+    top: 40px;
+    animation: rain_fall 3s infinite 0.2s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(13){
+    top: 0px;
+    animation: rain_fall 3s infinite 0.9s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(14){
+    top: 20px;
+    animation: rain_fall 3s infinite 0.8s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(15){
+    top: 40px;
+    animation: rain_fall 3s infinite 0.1s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(16){
+    top: 0px;
+    animation: rain_fall 3s infinite 0.5s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(17){
+    top: 20px;
+    animation: rain_fall 3s infinite 0.2s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(18){
+    top: 40px;
+    animation: rain_fall 3s infinite 0.5s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(19){
+    top: 0px;
+    animation: rain_fall 3s infinite 0.1s backwards linear;
+
+}
+
+.congratulations_star i:nth-child(20){
+    top: 20px;
+    animation: rain_fall 3s infinite backwards linear;
+
+}
+
+@keyframes rain_fall {
+    10% {
+        top: 10vh;
+        opacity: 1;
+    }
+
+    20%{
+        top: 20vh;
+        opacity: 0;
+    }
+
+    30%{
+        top: 30vh;
+        opacity: 1;
+    }
+
+    40%{
+        top: 40vh;
+        opacity: 0;
+    }
+
+    50%{
+        top: 50vh;
+        opacity: 1;
+    }
+
+    60%{
+        top: 60vh;
+        opacity: 0;
+    }
+
+    70%{
+        top: 70vh;
+        opacity: 1;
+    }
+
+    80%{
+        top: 80vh;
+        opacity: 0;
+    }
+
+    90%{
+        top: 90vh;
+        opacity: 1;
+    }
+
+    100%{
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+
+@keyframes card_display {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/*
+step 1: install node.js
+step 2: extension
+step 3: */

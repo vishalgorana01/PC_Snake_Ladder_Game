@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+     <!-- CDN link for awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section id="display">
+        <div class="status_of_player">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="serial_no">#</th>
+                    <th scope="col">Players</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Winner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="none">
+                    <th scope="row" class="serial_no">1</th>
+                    <td>Name1</td>
+                    <td>1st</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="none">
+                    <th scope="row" class="serial_no">2</th>
+                    <td>Name2</td>
+                    <td>2nd</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="none">
+                    <th scope="row" class="serial_no">3</th>
+                    <td>Name3</td>
+                    <td>3rd</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="none">
+                    <th scope="row" class="serial_no">4</th>
+                    <td>Name4</td>
+                    <td>4th</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- <i class="fa-solid fa-gear"></i> -->
+        </div>
+
+        <canvas id="myCanvas" width="700" height="700"></canvas>
+        <img class="img-1" src="./images/ladder1.png" alt="">
+        <img class="img-2" src="./images/sladder.png" alt="">
+        <img class="img-3" src="./images/snake1.png" alt="">
+        <img class="img-4" src="./images/snake2.png" alt="">
+        <img class="img-5" src="./images/snake3.png" alt="">
+        <img class="img-6" src="./images/sladder.png" alt="">
+
+        <div class="controller_div">
+            <button type="button" class="btn start">Start</button>
+            <button type="button" class="btn pause">Pause</button>
+            <button type="button" class="btn restart">Restart</button>
+            <div class="roll">
+                <div class="dice">
+                    <div class="first">first</div>
+                    <div class="second">second</div>
+                    <div class="third">third</div>
+                    <div class="four">four</div>
+                    <div class="five">fifth</div>
+                    <div class="six">sixth</div>
+                    <div class="none"></div>
+                </div>
+
+                <button type="button" class="btn roll_btn">roll</button>
+            </div>
+
+            <div class="no_of_players">
+                <div>
+                    <img src="./images/player1.png" alt="">
+                    <h4>player1</h4>
+                </div>
+                <div>
+                    <img src="./images/player2.png" alt="">
+                    <h4>player2</h4>
+                </div>
+                <div>
+                    <img src="./images/player3.png" alt="">
+                    <h4>player3</h4>
+                </div>
+                <div>
+                    <img src="./images/player4.png" alt="">
+                    <h4>player4</h4>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    
+
+    <div class="congratulations_card">
+        <i class="fa-sharp fa-solid fa-trophy"></i>
+        <h5>Congratulations</h5>
+        <h6>Player, you won the game</h6>
+        <div>
+            <button class="btn">Share</button>
+            <button type="button" class="btn" href="#" onclick="document.location.href='index.html'">Play again</button>
+        </div>
+    </div>
+    
+    <div class="congratulations_star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+    </div>
+
+</body>
+<script src="./index.js"></script>
+
+ <!-- Option 1: Bootstrap Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</html>
