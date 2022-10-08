@@ -271,6 +271,7 @@ roll_btn.addEventListener("click", function () {
     // all_players.sort(c,d =>{
     //     return c.steps - d.steps;
     // });
+    roll();
     
     for (let i = 0; i < table_of_all_players.length; i++) {
         for (let j = 0; j < table_of_all_players.length -i- 1; j++) {
@@ -294,14 +295,26 @@ roll_btn.addEventListener("click", function () {
         name_of_all_players.children[no_of_players - 1].style.boxShadow = "none";
     }
 
-    roll();
 
-    let a = Math.floor(Math.random(5) * 10);
-    if (a >= 7) {
-        a = 6;
-    }
-    else if (a == 0) {
+    let a = Math.floor(Math.random() * 100);
+
+    if(a%6 == 0){
         a = 1;
+    }
+    else if(a%6 == 1){
+        a = 2;
+    }
+    else if(a%6 == 2){
+        a = 3;
+    }
+    else if(a%6 == 3){
+        a = 4;
+    }
+    else if(a%6 == 4){
+        a = 5;
+    }
+    else if(a%6 == 5){
+        a = 6;
     }
 
     for (let i = 1; i <= 6; i++) {
